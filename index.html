@@ -80,8 +80,25 @@
                 <li><a href="#">Cadastrar-se</a></li>
             </ul>
         </nav>
+
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
     </header>
 
+    <div id="controle-fonte">
+                <button onclick="aumentarFonte()">A+</button>
+                <button onclick="diminuirFonte()">A-</button>
+            </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -97,8 +114,8 @@
 
     <!-- Produtos -->
     <section id="produtos" class="produtos">
-        <h2>Produtos em destaque</h2>
-        <div class="grid-produtos">
+        <h2>Produtos em alta 🔥</h2>
+        <div class="grid-produtos destaque">
             <div class="produto-card">
                 <img src="img/produto-1.png" alt="" width="180px">
                 <p class="texto-multilinha">Camisa elegante de manga longa bufante com gola alta de cor cinza com botões</p>
@@ -155,8 +172,140 @@
                     </svg>
                 </button>
             </div>
-            <div class="produto-card">Produto 6</div>
+            <div class="produto-card">
+                <img src="img/produto-6.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
+                <p>R$99,99</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
+    </section>
+
+    <div id="produtoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <div class="modal-top">
+      <img id="modal-img" src="" alt="Produto" class="modal-img">
+      <div class="modal-info">
+        <h2 id="modal-nome">Nome do Produto</h2>
+        <div class="avaliacao-produto">
+          Avaliação: <span id="media-estrelas">☆☆☆☆☆</span>
         </div>
+        
+        <div class="detalhes-roupa">
+            <p><strong>Tamanhos disponíveis:</strong> <span id="modal-tamanhos"></span></p>
+            <p><strong>Material:</strong> <span id="modal-material"></span></p>
+            <p><strong>Cor:</strong> <span id="modal-cor"></span></p>
+        </div>
+
+        <p id="modal-preco">R$0,00</p>
+
+        <!-- Botões de comprar/carrinho -->
+        <div class="modal-botoes">
+          <button type="button" class="btn btn-outline-dark">Comprar</button>
+          <button type="button" class="btn btn-outline-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comentários abaixo -->
+    <div class="modal-comentarios">
+      <h3>Comentários:</h3>
+      <ul id="lista-comentarios"></ul>
+
+      <div class="avaliacao-comentario">
+        <span class="estrela" data-value="1">★</span>
+        <span class="estrela" data-value="2">★</span>
+        <span class="estrela" data-value="3">★</span>
+        <span class="estrela" data-value="4">★</span>
+        <span class="estrela" data-value="5">★</span>
+      </div>
+
+      <textarea id="novo-comentario" placeholder="Escreva seu comentário"></textarea>
+      <button id="adicionar-comentario" class="btn-meu">Comentar</button>
+    </div>
+  </div>
+</div>
+
+    <section id="produtos" class="produtos">
+        <h2>Produtos que pode gostar</h2>
+        <div class="grid-produtos">
+            <div class="produto-card">
+                <img src="img/produto-7.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa elegante de manga longa bufante com gola alta de cor cinza com botões</p>
+                <p>R$79,99</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+                <p></p>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-8.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa de manga longa na cor cinza escuro, em poliéster, com botões e sem bolsos</p>
+                <p>R$79,99</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-9.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa de manga comprida chiffon branca estampada semi-transparente com gola alta</p>
+                <p>R$75,00</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-10.png" alt="" width="180px">
+                <p class="texto-multilinha">Blusa tricô cropped de manga longa em decote V com estampa simples na cor marrom</p>
+                <p>R$68,00</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-11.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
+                <p>R$99,99</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-12.png" alt="" width="180px">
+                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
+                <p>R$99,99</p>
+                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <button type="button" class="btn btn-outline-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </button>
+            </div>
     </section>
 
     <!-- Footer -->

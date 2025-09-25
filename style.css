@@ -280,13 +280,14 @@ header {
 
 .btn-meu {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 8px 18px;
     background-color: #FF6F3C;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background 0.3s, transform 0.3s;
+    border: none;
 }
 
 .btn-meu:hover {
@@ -303,7 +304,9 @@ header {
 .produtos h2 {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #0B3D91;
+    color: #cc522f;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
 }
 
 .grid-produtos {
@@ -343,9 +346,152 @@ header {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    
     padding: 5px;
 }
+ 
+ .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+}
+
+.close {
+  color: #cc522f;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.modal-top {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.modal-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  object-fit: contain;
+  background-color: #f5f5f5;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #cc522f;
+}
+
+.modal-info p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.detalhes-roupa p { margin: 5px 0; font-size: 14px; }
+
+.avaliacao-produto {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.modal-botoes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-botoes .btn {
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.modal-botoes .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.modal-comentarios {
+  margin-top: 20px;
+}
+
+#lista-comentarios li {
+    list-style: none;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+#novo-comentario {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: vertical;
+}
+
+#novo-comentario:focus {
+  box-shadow: 0 0 10px rgba(204, 82, 47, 0.6);
+  outline: none;
+}
+
+/* Estrelas do comentário */
+.avaliacao-comentario {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+  flex-direction: row; /* esquerda -> direita */
+}
+
+.avaliacao-comentario .estrela {
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.avaliacao-comentario .estrela.active {
+  color: gold;
+}
+
 
 /* Footer */
 footer {
@@ -382,4 +528,30 @@ footer {
     .hero-text h1 {
         font-size: 2rem;
     }
+}
+
+#controle-fonte button {
+
+  background-color: #b23e08; /* Cor de fundo dos botões (tom de café) */
+
+  color: #fff; /* Cor da fonte dos botões (branca) */
+
+  border: none; /* Remove a borda padrão dos botões */
+
+  margin: 20px; /* Margem externa de 2px entre os botões */
+
+  padding: 8px 12px; /* Espaçamento interno (8px em cima/baixo, 12px nas laterais) */
+
+  font-size: 18px; /* Tamanho da fonte dos botões */
+
+  border-radius: 5px; /* Bordas arredondadas nos botões */
+
+  cursor: pointer; /* Mostra a mãozinha ao passar o mouse, indicando que é clicável */
+
+}
+
+#controle-fonte button:hover {
+
+  background-color: #972918; /* Cor mais escura para indicar que está sendo "hovered" */
+
 }
