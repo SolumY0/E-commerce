@@ -74,12 +74,22 @@
             </button>
         </div>
 
-         <nav class="center-nav">
-            <ul>
-                <li><a href="#">Entrar</a></li>
-                <li><a href="#">Cadastrar-se</a></li>
-            </ul>
-        </nav>
+
+
+        <span id="areaLogin">
+            <nav class="center-nav">
+                <ul>
+                    <li><a href="login.html" id="btnEntrar">Entrar</a></li>
+                    <li><a href="cadastro.html" id="btnCadastrar">Cadastrar-se</a></li>
+                </ul>
+            </nav>
+        </span>
+
+        <span id="areaUsuario" style="display:none;">
+            Olá, <strong id="nomeUsuario"></strong>!
+            <button onclick="logout()">Sair</button>
+        </span>
+
 
         <div vw class="enabled">
             <div vw-access-button class="active"></div>

@@ -208,3 +208,221 @@ document.querySelectorAll('.produto-card').forEach((card, index) => {
         atualizarEstrelasComentario(avaliacaoAtual);
     });
 });
+
+// ====== LOGIN & CADASTRO ======
+function loginUsuario(nome) {
+  localStorage.setItem("usuarioLogado", nome);
+  window.location.href = "index.html"; // redireciona para home
+}
+
+function getUsuarioLogado() {
+  return localStorage.getItem("usuarioLogado");
+}
+
+function logout() {
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = "index.html"; // volta para home
+}
+
+// ====== ALTERA O MENU DE ACORDO COM LOGIN ======
+document.addEventListener("DOMContentLoaded", () => {
+  const usuario = getUsuarioLogado();
+  const areaLogin = document.getElementById("areaLogin");
+  const areaUsuario = document.getElementById("areaUsuario");
+  const nomeUsuario = document.getElementById("nomeUsuario");
+
+  if (usuario) {
+    // Está logado → esconde "Entrar / Cadastrar-se"
+    areaLogin.style.display = "none";
+    areaUsuario.style.display = "inline";
+    nomeUsuario.textContent = usuario;
+  } else {
+    // Não logado → mostra "Entrar / Cadastrar-se"
+    areaLogin.style.display = "inline";
+    areaUsuario.style.display = "none";
+  }
+});
+
+// Vitória
+
+const mode = document.getElementById('mode_icon');
+
+if (mode) {
+    mode.addEventListener('click', () => {
+        let form = document.getElementById('login_form') || document.getElementById('cadastro_form') || document.getElementById('esqueceu_form');
+        if (form) {
+            if (mode.classList.contains('fa-moon')) {
+                mode.classList.remove('fa-moon');
+                mode.classList.add('fa-sun');
+                form.classList.add('dark');
+                return;
+            }
+            mode.classList.remove('fa-sun');
+            mode.classList.add('fa-moon');
+            form.classList.remove('dark');
+        }
+    });
+}
+
+// Função para mostrar mensagem de erro
+function showMessage(msg) {
+    let oldMsg = document.getElementById('form-message');
+    if (oldMsg) oldMsg.remove();
+
+    let div = document.createElement('div');
+    div.id = 'form-message';
+    div.style.margin = '10px 0';
+    div.style.padding = '10px';
+    div.style.borderRadius = '6px';
+    div.style.fontWeight = 'bold';
+    div.style.textAlign = 'center';
+    div.style.fontSize = '15px';
+    div.style.background = '#ffe5e0';
+    div.style.color = '#cc522f';
+    div.innerText = msg;
+
+    let form = document.getElementById('login_form') || document.getElementById('cadastro_form') || document.getElementById('esqueceu_form');
+    form.insertBefore(div, form.firstChild);
+}
+
+// Função para mostrar mensagem de sucesso
+function showSuccess(msg) {
+    let oldMsg = document.getElementById('form-message');
+    if (oldMsg) oldMsg.remove();
+
+    let div = document.createElement('div');
+    div.id = 'form-message';
+    div.style.margin = '10px 0';
+    div.style.padding = '10px';
+    div.style.borderRadius = '6px';
+    div.style.fontWeight = 'bold';
+    div.style.textAlign = 'center';
+    div.style.fontSize = '15px';
+    div.style.background = '#e0ffe5';
+    div.style.color = '#2e7d32';
+    div.innerText = msg;
+
+    let form = document.getElementById('login_form') || document.getElementById('cadastro_form') || document.getElementById('esqueceu_form');
+    form.insertBefore(div, form.firstChild);
+}
+
+// Cadastro
+const cadastroForm = document.getElementById('cadastro_form');
+if (cadastroForm) {
+    cadastroForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('password').value.trim();
+        const confirmSenha = document.getElementById('confirm_password').value.trim();
+
+        if (!nome || !email || !senha || !confirmSenha) {
+            showMessage('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        if (senha.length < 6) {
+            showMessage('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        if (senha !== confirmSenha) {
+            showMessage('As senhas não coincidem.');
+            return;
+        }
+
+        // Salva os dados no localStorage
+        localStorage.setItem('user_nome', nome);
+        localStorage.setItem('user_email', email);
+        localStorage.setItem('user_senha', senha);
+
+        showSuccess('Cadastro realizado com sucesso! Redirecionando para o login...');
+
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1800);
+    });
+
+    // Botão de voltar para login já é um <a href="login.html">, não precisa JS
+}
+
+// Login
+const loginForm = document.getElementById('login_form');
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('password').value.trim();
+
+        // Busca dados salvos
+        const savedNome = localStorage.getItem('user_nome');
+        const savedEmail = localStorage.getItem('user_email');
+        const savedSenha = localStorage.getItem('user_senha');
+
+        if (!nome || !email || !senha) {
+            showMessage('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        if (
+            nome === savedNome &&
+            email === savedEmail &&
+            senha === savedSenha
+        ) {
+            showSuccess('Login realizado com sucesso! Redirecionando...');
+            setTimeout(() => {
+                window.location.href = 'index.html'; // Página inicial
+            }, 1200);
+        } else {
+            showMessage('Nome, e-mail ou senha incorretos.');
+        }
+    });
+
+    // Link para "Esqueceu a senha?"
+    const forgot = document.getElementById('forgot_password');
+    if (forgot) {
+        forgot.innerHTML = '<a href="senha.html">Esqueceu sua senha?</a>';
+    }
+}
+
+// Esqueceu senha
+const esqueceuForm = document.getElementById('esqueceu_form');
+if (esqueceuForm) {
+    esqueceuForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const newPass = document.getElementById('new_password').value.trim();
+        const confirmPass = document.getElementById('confirm_new_password').value.trim();
+
+        const savedEmail = localStorage.getItem('user_email');
+        console.log('Digitado:', email, 'Salvo:', savedEmail);
+
+        if (!email || !newPass || !confirmPass) {
+            showMessage('Por favor, preencha todos os campos.');
+            return;
+        }
+        if (newPass.length < 6) {
+            showMessage('A nova senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+        if (newPass !== confirmPass) {
+            showMessage('As senhas não coincidem.');
+            return;
+        }
+        if (email !== savedEmail) {
+            showMessage('E-mail não cadastrado.');
+            return;
+        }
+
+        localStorage.setItem('user_senha', newPass);
+        showSuccess('Senha alterada com sucesso! Redirecionando para o login...');
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+    });
+
+    // Botão de voltar para login já é um <a href="login.html">, não precisa JS
+}

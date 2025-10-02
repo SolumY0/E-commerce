@@ -555,3 +555,224 @@ footer {
   background-color: #972918; /* Cor mais escura para indicar que está sendo "hovered" */
 
 }
+
+
+/*Vitória*/
+
+.body_login {
+    --color-gradiente: linear-gradient(135deg, #DD8C74, #f9c9a5);
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --input-border-color: #DD8C74;
+     --color-light-50: #f8fafc;
+     --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+}
+#container{
+    height: 100vh;
+    width: 100%;
+    display: flex;justify-content: center;
+    align-items: center;
+    background-image: var(--color-gradiente);
+}
+#cadastro_form{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    gap: 30px;
+    box-shadow: 5px 5px 10px #0000006e;
+    animation: dark-to-light-background 0.3s ease-in-out;
+}
+
+#login_form{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    gap: 30px;
+    box-shadow: 5px 5px 10px #0000006e;
+    animation: dark-to-light-background 0.3s ease-in-out;
+}
+
+#esqueceu_form{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    gap: 30px;
+    box-shadow: 5px 5px 10px #0000006e;
+    animation: dark-to-light-background 0.3s ease-in-out;
+}
+
+#header_form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header_form h1::before{
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 3px;
+    background-color: #DD8C74;
+    bottom: 5px;
+    border-radius: 5px;
+}
+
+#header_form h1{
+    font-size: 35px;
+    position: relative;
+}
+
+#mode_icon{
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* Mídias sociais */
+#social_media{
+    display: flex;
+    justify-content: space-around;
+}
+
+#social_media img{
+    width: 35px;
+}
+
+/* Aumentar o tamanho ao passar o mouse */
+#social_media img:hover{
+    transform: scale(1.1);
+}
+
+/* Entrada de dados - Inputs */
+#inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#input_box > label{
+    font-size: 14px;
+    color: var(--color-dark-50);
+}
+
+#input_field{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    border-bottom: 2px solid var(--input-border-color); 
+    cursor: text;
+}
+
+#input_field > i{
+    font-size: 18px;
+    color: var(--color-dark-900);
+    cursor: text;
+}
+
+#input_field > input{
+    border: none;
+    width: 260px;
+    background-color: transparent;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+#input_field > input:focus{
+    outline: none;
+}
+
+/* Esqueceu a senha */
+#forgot_password > a{
+    text-decoration: none;
+    color: var(--color-dark-50);
+    font-size: 12px;
+}
+
+#forgot_password > a:hover{
+    color: var(--input-border-color);
+}
+
+/* Botão de login */
+#form_buttons {
+    display: flex;
+    gap: 15px; /* diminua para deixar mais juntos */
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#login_button,
+#cadastrar_button,
+#esqueceu_button {
+    border: none;
+    background: var(--color-gradiente);
+    padding: 7px 18px;
+    border-radius: 3px;
+    color: var(--color-light-50);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 1.5s;
+    text-decoration: none; /* para o <a> */
+    display: inline-block;
+}
+
+#login_button:hover,
+#cadastrar_button:hover,
+#esqueceu_button:hover {
+    transform: scale(1.04);
+}
+
+
+/* Dark mode */
+.dark#login_form,
+.dark#cadastro_form, 
+.dark#esqueceu_form {
+    color: var(--color-light-50);
+    background-color: var(--color-dark-100);
+    animation: light-to-dark-background 0.3s ease-in-out;
+}
+
+.dark#login_form #input_field > input,
+.dark#cadastro_form #input_field > input,
+.dark#esqueceu_form #input_field > input {
+    color: #fff;
+}
+.dark#login_form .input_field i,
+.dark#cadastro_form .input_field i,
+.dark#esqueceu_form .input_field i {
+    color: var(--color-light-50);
+}
+
+@keyframes dark-to-light-background{
+    0%{
+        background-color: var(--color-dark-100);
+    }
+    100.0%{
+        background-color: var(--color-light-50);
+    }
+}
+
+@keyframes light-to-dark-background{
+    0%{
+        background-color: var(--color-light-50);
+    }
+    100.0%{
+        background-color: var(--color-dark-100);
+    }
+}
