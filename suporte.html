@@ -20,10 +20,9 @@
                     <li>
                         <a href="#"><span class="material-symbols-outlined menu-icon">menu</span></a>
                         <ul class="menu-color">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html">Início</a></li>
                             <li><a href="sobre.html">Sobre nós</a></li>
                             <li><a href="contato.html">Contato</a></li>
-                            <li><a href="suporte.html">Suporte</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -49,13 +48,6 @@
 
 <div id="resultadoBusca"></div>
 
-        <div>
-            <button class="nav-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
-                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"/>
-                </svg>
-            </button>
-        </div>
 
         <!-- <nav class="center-nav">
             <ul>
@@ -65,55 +57,101 @@
             </ul>
         </nav> -->
 
-    <div>
-        <a href="carrinho.html" class="nav-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-            </svg>
-        </a>
-    </div>
+<div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+
     </header>
 
+    <div id="controle-fonte">
+                <button onclick="aumentarFonte()">A+</button>
+                <button onclick="diminuirFonte()">A-</button>
+            </div>
+
      <!-- Hero compacto -->
-    <section class="hero hero-suporte" style="background-image: url('https://images.unsplash.com/photo-1581091012184-1ee8fa8a4c9b?auto=format&fit=crop&w=1950&q=80');">
-        <div class="hero-text">
-            <h1>Suporte ao Cliente</h1>
-            <p>Estamos aqui para ajudar você com qualquer dúvida ou problema.</p>
-        </div>
-    </section>
+<section class="hero-suporte-laura" style="background-image: url('https://images.unsplash.com/photo-1581091012184-1ee8fa8a4c9b?auto=format&fit=crop&w=1950&q=80');">
+    <div class="hero-text-laura">
+        <h1>Suporte ao Cliente</h1>
+        <p>Estamos aqui para ajudar você com qualquer dúvida ou problema.</p>
+    </div>
+</section>
 
-    <!-- Seção de Contatos de Suporte -->
-    <section class="produtos reveal">
-        <h2>Como podemos ajudar?</h2>
-        <div class="grid-produtos">
-            <div class="produto-card">
-                <p><strong>E-mail:</strong> suporte@vertice.com</p>
-            </div>
-            <div class="produto-card">
-                <p><strong>WhatsApp:</strong> +55 11 91234-5678</p>
-            </div>
-            <div class="produto-card">
-                <p><strong>Telefone:</strong> +55 11 1234-5678</p>
-            </div>
-            <div class="produto-card">
-                <p><strong>Chat Online:</strong> disponível 9h às 18h</p>
-            </div>
+<!-- Seção de Contatos de Suporte -->
+<section class="produtos-suporte-laura reveal-laura">
+    <h2>Como podemos ajudar?</h2>
+    <div class="grid-produtos-suporte-laura">
+        <div class="produto-card-suporte-laura">
+            <p><strong>E-mail:</strong> suporte@vertice.com</p>
         </div>
-    </section>
+        <div class="produto-card-suporte-laura">
+            <p><strong>WhatsApp:</strong> +55 11 91234-5678</p>
+        </div>
+        <div class="produto-card-suporte-laura">
+            <p><strong>Telefone:</strong> +55 11 1234-5678</p>
+        </div>
+        <div class="produto-card-suporte-laura">
+            <p><strong>Chat Online:</strong> disponível 9h às 18h</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Seção de FAQ -->
-    <section class="produtos reveal">
-        <h2>Perguntas Frequentes</h2>
-        <div class="faq">
-            <div class="faq-item">
-                <p class="question">Como faço para trocar um produto?</p>
-                <p class="answer">Você pode solicitar a troca pelo nosso e-mail de suporte ou pelo chat online. Temos 30 dias para efetuar a troca.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">Quanto tempo demora a entrega?</p>
-                <p class="answer">O prazo médio é de 5 a 10 dias úteis, dependendo da sua localização.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">Posso acompanhar meu pedido?</p>
-                <p class="answer">Sim, você receberá um código de rastreamento por e-mail assim que o pedido for enviado.</p>
-            </div
+<!-- Seção de FAQ -->
+<section class="produtos-faq-laura reveal-laura">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-laura">
+        <div class="faq-item-laura">
+            <p class="question-laura">Como faço para trocar um produto?</p>
+            <p class="answer-laura">Você pode solicitar a troca pelo nosso e-mail de suporte ou pelo chat online. Temos 30 dias para efetuar a troca.</p>
+        </div>
+        <div class="faq-item-laura">
+            <p class="question-laura">Quanto tempo demora a entrega?</p>
+            <p class="answer-laura">O prazo médio é de 5 a 10 dias úteis, dependendo da sua localização.</p>
+        </div>
+        <div class="faq-item-laura">
+            <p class="question-laura">Posso acompanhar meu pedido?</p>
+            <p class="answer-laura">Sim, você receberá um código de rastreamento por e-mail assim que o pedido for enviado.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Formulário de Contato Rápido -->
+<section class="produtos-form-laura reveal-laura">
+    <h2>Envie sua Mensagem</h2>
+    <form class="form-contato-laura" id="formRapido-laura">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea placeholder="Digite sua mensagem" rows="4" required></textarea>
+        <p id="msgConfirmacao-laura" class="confirmacao-laura"></p>
+        <button type="button" id="btnEnviar-laura">Enviar</button>
+    </form>    
+</section>
+
+<!-- Chat Widget Flutuante -->
+<div id="chat-widget-laura">
+    <button id="chat-toggle-laura">Chat</button>
+    <div id="chat-container-widget-laura" class="chat-container-widget-laura">
+        <div id="chat-box-widget-laura"></div>
+        <div id="chat-buttons-widget-laura" class="chat-buttons-laura" style="display:none;">
+            <button class="chat-option-laura">Falar com Vendedor</button>
+            <button class="chat-option-laura">Continuar com Aline</button>
+        </div>
+        <form id="chat-form-widget-laura">
+            <input type="text" id="user-input-widget-laura" placeholder="Digite sua mensagem..." required>
+            <button type="submit" class="nav-btn-laura">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

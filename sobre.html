@@ -20,8 +20,7 @@
                     <li>
                         <a href="#"><span class="material-symbols-outlined menu-icon">menu</span></a>
                         <ul class="menu-color">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="sobre.html">Sobre nós</a></li>
+                            <li><a href="index.html">Início</a></li>
                             <li><a href="contato.html">Contato</a></li>
                             <li><a href="suporte.html">Suporte</a></li>
                         </ul>
@@ -49,91 +48,83 @@
 
 <div id="resultadoBusca"></div>
 
-        <div>
-            <button class="nav-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
-                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"/>
-                </svg>
-            </button>
+<div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
         </div>
 
-        <!-- <nav class="center-nav">
-            <ul>
-                <li><a href="#">Mulheres</a></li>
-                <li><a href="#">Homens</a></li>
-                <li><a href="#">Crianças</a></li>
-            </ul>
-        </nav> -->
-
-    <div>
-        <a href="carrinho.html" class="nav-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-            </svg>
-        </a>
-    </div>
-
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+        
     </header>
 
+    <div id="controle-fonte">
+                <button onclick="aumentarFonte()">A+</button>
+                <button onclick="diminuirFonte()">A-</button>
+            </div>
 
-    <!-- Hero elegante -->
-    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1581091012184-1c3b8a73a3b1?auto=format&fit=crop&w=1950&q=80');">
-        <div class="hero-text">
+     <!-- Hero elegante -->
+    <section class="hero-laura" style="background-image: url('https://images.unsplash.com/photo-1581091012184-1c3b8a73a3b1?auto=format&fit=crop&w=1950&q=80');">
+        <div class="hero-text-laura">
             <h1>Sobre a Vértice</h1>
             <p>Moda que inspira, conforto que encanta</p>
         </div>
     </section>
 
     <!-- Nossa História -->
-    <section class="history-section reveal">
-        <div class="history-container">
+    <section class="history-section-laura reveal-laura">
+        <div class="history-container-laura">
             <h2>Nossa História</h2>
             <p>A Vértice nasceu da paixão por moda e design, buscando criar peças que unem estilo, elegância e sustentabilidade. Cada coleção é cuidadosamente pensada para oferecer conforto, qualidade e modernidade aos nossos clientes.</p>
         </div>
     </section>
 
     <!-- Nossa Missão -->
-    <section class="mission-section reveal">
-        <div class="mission-container">
+    <section class="mission-section-laura reveal-laura">
+        <div class="mission-container-laura">
             <h2>Nossa Missão</h2>
             <p>Inspirar confiança e autenticidade em nossos clientes, promovendo moda consciente e atemporal. Buscamos criar roupas que transmitam personalidade e reforcem o estilo de vida moderno e elegante.</p>
         </div>
     </section>
 
     <!-- Sobre nossas Peças -->
-    <section class="pieces-section reveal">
-        <div class="pieces-container">
+    <section class="pieces-section-laura reveal-laura">
+        <div class="pieces-container-laura">
             <h2>Nossas Peças</h2>
             <p>As peças da Vértice são confeccionadas com materiais de alta qualidade, garantindo durabilidade e conforto. Cada coleção combina tendências atuais com design atemporal, prezando pela sustentabilidade e estilo sofisticado.</p>
         </div>
     </section>
 
-    <section class="team-section reveal">
-    <h2>Mentes Criadoras</h2>
-    <div class="team-grid">
-        <div class="team-card">
-            <div class="team-photo-wrapper">
-                <img src="img/a.png" alt="Ana Clara Gouvêa" class="team-photo">
+    <section class="team-section-laura reveal-laura">
+        <h2>Mentes Criadoras</h2>
+        <div class="team-grid-laura">
+            <div class="team-card-laura">
+                <div class="team-photo-wrapper-laura">
+                    <img src="img/a.png" alt="Ana Clara Gouvêa" class="team-photo-laura">
+                </div>
+                <div class="team-name-laura">Ana Clara Gouvêa</div>
+                <div class="team-role-laura">Designer de Moda</div>
             </div>
-            <div class="team-name">Ana Clara Gouvêa</div>
-            <div class="team-role">Designer de Moda</div>
-        </div>
-        <div class="team-card">
-            <div class="team-photo-wrapper">
-                <img src="img/l.png" alt="Laura Vitória Luppi Resta" class="team-photo">
+            <div class="team-card-laura">
+                <div class="team-photo-wrapper-laura">
+                    <img src="img/l.png" alt="Laura Vitória Luppi Resta" class="team-photo-laura">
+                </div>
+                <div class="team-name-laura">Laura Vitória Luppi Resta</div>
+                <div class="team-role-laura">Diretora de Criação</div>
             </div>
-            <div class="team-name">Laura Vitória Luppi Resta</div>
-            <div class="team-role">Diretora de Criação</div>
-        </div>
-        <div class="team-card">
-            <div class="team-photo-wrapper">
-                <img src="img/v.png" alt="Vitória Gomes de Paula" class="team-photo">
+            <div class="team-card-laura">
+                <div class="team-photo-wrapper-laura">
+                    <img src="img/v.png" alt="Vitória Gomes de Paula" class="team-photo-laura">
+                </div>
+                <div class="team-name-laura">Vitória Gomes de Paula</div>
+                <div class="team-role-laura">Marketing & Comunicação</div>
             </div>
-            <div class="team-name">Vitória Gomes de Paula</div>
-            <div class="team-role">Marketing & Comunicação</div>
         </div>
-    </div>
-</section>
+    </section>
 
     <script src="script.js"></script>
 </body>

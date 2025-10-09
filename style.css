@@ -348,6 +348,18 @@ header {
     text-overflow: ellipsis;
     padding: 5px;
 }
+
+.texto-multilinha01 {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Mude de 2 para 1 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+}
  
  .modal {
   display: none;
@@ -556,6 +568,172 @@ footer {
 
 }
 
+/* Adiciona as variáveis de cor para o formulário */
+.body_address_form {
+    --color-primary: #cc522f;
+    --color-secondary: #ff8533;
+    --color-gradiente: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --input-border-color: #DD8C74;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f0f0f0; /* Fundo suave, como na imagem original */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#address_container {
+    /* Simula o modal centralizado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+}
+
+.address_form_content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+.address_header h2 {
+    font-size: 1.5em;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.address_header p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Estrutura dos grupos de input */
+.address-group {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.address-group-split > * {
+    flex: 1; /* Divide o espaço igualmente */
+}
+
+.address-group-full {
+    width: 100%;
+}
+
+/* Estilo para todos os campos de input de texto */
+.address_form_content input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Abel', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.address_form_content input[type="text"]:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 5px rgba(255, 133, 51, 0.5);
+    outline: none;
+}
+
+/* Ajuste específico para o campo Número */
+.address-group-split .input-numero {
+    flex: 0.35; /* Torna o campo de número menor, como na imagem */
+    min-width: 80px;
+}
+
+/* Estilos para o grupo de rádio (Salvar Como) */
+.radio-container {
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.radio-label {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+}
+
+.radio-group {
+    margin-top: 8px;
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* Botões de Ação */
+.address-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-cancel {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+
+/* Usa a classe de botão existente para o botão Enviar */
+.btn-submit {
+    /* O estilo do botão Enviar é herdado de #vitoria_login_button, que já tem o gradiente */
+    text-decoration: none; /* Para garantir que não fique sublinhado */
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .address_form_content {
+        padding: 20px 20px;
+    }
+
+    .address-group-split {
+        flex-direction: column;
+    }
+    .address-group-split .input-numero {
+        flex: 1; /* Ocupa a largura total em telas pequenas */
+    }
+    .address-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-cancel, .btn-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.compra-btn{
+    text-decoration: none;
+    color: var(--color-dark-900);
+}
+
+.compra-btn:hover{
+    color: white
+}
 
 /*Vitória*/
 
@@ -566,19 +744,24 @@ footer {
     padding: 0;
     box-sizing: border-box;
     --input-border-color: #DD8C74;
-     --color-light-50: #f8fafc;
-     --color-dark-50: #797984;
+    --color-light-50: #f8fafc;
+    --color-dark-50: #797984;
     --color-dark-100: #312d37;
     --color-dark-900: #000;
 }
-#container{
+
+#vitoria_container{
     height: 100vh;
     width: 100%;
-    display: flex;justify-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-image: var(--color-gradiente);
 }
-#cadastro_form{
+
+#vitoria_cadastro_form,
+#vitoria_login_form,
+#vitoria_esqueceu_form {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -590,37 +773,13 @@ footer {
     animation: dark-to-light-background 0.3s ease-in-out;
 }
 
-#login_form{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 20px;
-    gap: 30px;
-    box-shadow: 5px 5px 10px #0000006e;
-    animation: dark-to-light-background 0.3s ease-in-out;
-}
-
-#esqueceu_form{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    background-color: white;
-    padding: 30px 40px;
-    border-radius: 20px;
-    gap: 30px;
-    box-shadow: 5px 5px 10px #0000006e;
-    animation: dark-to-light-background 0.3s ease-in-out;
-}
-
-#header_form{
+#vitoria_header_form{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#header_form h1::before{
+#vitoria_header_form h1::before{
     position: absolute;
     content: '';
     width: 40%;
@@ -630,33 +789,33 @@ footer {
     border-radius: 5px;
 }
 
-#header_form h1{
+#vitoria_header_form h1{
     font-size: 35px;
     position: relative;
 }
 
-#mode_icon{
+#vitoria_mode_icon{
     cursor: pointer;
     font-size: 25px;
 }
 
 /* Mídias sociais */
-#social_media{
+#vitoria_social_media{
     display: flex;
     justify-content: space-around;
 }
 
-#social_media img{
+#vitoria_social_media img{
     width: 35px;
 }
 
 /* Aumentar o tamanho ao passar o mouse */
-#social_media img:hover{
+#vitoria_social_media img:hover{
     transform: scale(1.1);
 }
 
 /* Entrada de dados - Inputs */
-#inputs{
+#vitoria_inputs{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -664,12 +823,12 @@ footer {
     gap: 20px;
 }
 
-#input_box > label{
+#vitoria_input_box > label{
     font-size: 14px;
     color: var(--color-dark-50);
 }
 
-#input_field{
+#vitoria_input_field{
     display: flex;
     align-items: center;
     gap: 15px;
@@ -678,13 +837,13 @@ footer {
     cursor: text;
 }
 
-#input_field > i{
+#vitoria_input_field > i{
     font-size: 18px;
     color: var(--color-dark-900);
     cursor: text;
 }
 
-#input_field > input{
+#vitoria_input_field > input{
     border: none;
     width: 260px;
     background-color: transparent;
@@ -692,89 +851,1095 @@ footer {
     padding: 0px 5px;
 }
 
-#input_field > input:focus{
+#vitoria_input_field > input:focus{
     outline: none;
 }
 
 /* Esqueceu a senha */
-#forgot_password > a{
+#vitoria_forgot_password > a{
     text-decoration: none;
     color: var(--color-dark-50);
     font-size: 12px;
 }
 
-#forgot_password > a:hover{
+#vitoria_forgot_password > a:hover{
     color: var(--input-border-color);
 }
 
-/* Botão de login */
-#form_buttons {
+/* Botões */
+#vitoria_form_buttons {
     display: flex;
-    gap: 15px; /* diminua para deixar mais juntos */
+    gap: 15px; 
     justify-content: center;
     align-items: center;
     margin-top: 10px;
 }
 
-#login_button,
-#cadastrar_button,
-#esqueceu_button {
+#vitoria_login_button,
+#vitoria_cadastrar_button,
+#vitoria_esqueceu_button {
     border: none;
     background: var(--color-gradiente);
     padding: 7px 18px;
     border-radius: 3px;
-    color: var(--color-light-50);
+    color: white;
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
     transition: 1.5s;
-    text-decoration: none; /* para o <a> */
+    text-decoration: none;
     display: inline-block;
 }
 
-#login_button:hover,
-#cadastrar_button:hover,
-#esqueceu_button:hover {
+#vitoria_login_button:hover,
+#vitoria_cadastrar_button:hover,
+#vitoria_esqueceu_button:hover {
     transform: scale(1.04);
 }
 
-
 /* Dark mode */
-.dark#login_form,
-.dark#cadastro_form, 
-.dark#esqueceu_form {
+.dark#vitoria_login_form,
+.dark#vitoria_cadastro_form, 
+.dark#vitoria_esqueceu_form {
     color: var(--color-light-50);
     background-color: var(--color-dark-100);
     animation: light-to-dark-background 0.3s ease-in-out;
 }
 
-.dark#login_form #input_field > input,
-.dark#cadastro_form #input_field > input,
-.dark#esqueceu_form #input_field > input {
+.dark#vitoria_login_form #vitoria_input_field > input,
+.dark#vitoria_cadastro_form #vitoria_input_field > input,
+.dark#vitoria_esqueceu_form #vitoria_input_field > input {
     color: #fff;
 }
-.dark#login_form .input_field i,
-.dark#cadastro_form .input_field i,
-.dark#esqueceu_form .input_field i {
+
+.dark#vitoria_login_form #vitoria_input_field i,
+.dark#vitoria_cadastro_form #vitoria_input_field i,
+.dark#vitoria_esqueceu_form #vitoria_input_field i {
     color: var(--color-light-50);
 }
 
+/* Animações */
 @keyframes dark-to-light-background{
-    0%{
-        background-color: var(--color-dark-100);
-    }
-    100.0%{
-        background-color: var(--color-light-50);
-    }
+    0%{ background-color: var(--color-dark-100); }
+    100%{ background-color: var(--color-light-50); }
 }
 
 @keyframes light-to-dark-background{
-    0%{
-        background-color: var(--color-light-50);
-    }
-    100.0%{
-        background-color: var(--color-dark-100);
-    }
+    0%{ background-color: var(--color-light-50); }
+    100%{ background-color: var(--color-dark-100); }
+}
+
+#filtro-panel {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 30px 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-bottom: 4px solid #cc522f;
+  text-align: center;
+
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 999;
+  font-family: "Raleway", sans-serif;
+}
+
+#filtro-panel.ativo {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#filtro-panel h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #cc522f;
+}
+
+#filtro-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+#filtro-panel ul li a {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px; /* menos arredondado */
+  background: #cc522f; /* fundo sólido elegante */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#filtro-panel ul li a:hover {
+  background: #fff;
+  color: #cc522f;
+  border: 1px solid #cc522f;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transform: none; /* sem movimento */
+}
+
+/* Botão de fechar */
+#fecharFiltro {
+  padding: 8px 18px;
+  border-radius: 8px; 
+  background: #e0e0e0; /* neutro e clean */
+  border: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#fecharFiltro:hover {
+  background: #cc522f;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* página das roupas */
+ body {
+            font-family: 'Raleway', sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        header.vitoria_header {
+            background: #cc522f;
+            color: #fff;
+        }
+
+        header.vitoria_header .vitoria_logo img {
+            width: 100px;
+        }
+
+        main.container h2 {
+            color: #cc522f;
+            margin-bottom: 20px;
+        }
+
+        /* Filtro lateral */
+        #vitoria_filtro-panel {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+        }
+
+        #vitoria_filtro-panel h3 {
+            color: #cc522f;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        #vitoria_filtro-panel ul li a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #cc522f;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        #vitoria_filtro-panel ul li a.active,
+        #vitoria_filtro-panel ul li a:hover {
+            background: #fff;
+            color: #cc522f;
+            border: 1px solid #cc522f;
+        }
+
+        .vitoria_produto-card {
+    margin-bottom: 80px; /* ou 400px se quiser bem afastado */
+}
+
+/* ==== Filtro por gênero ==== */
+.filtro-genero {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.filtro-genero h3 {
+    color: #cc522f;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Grupo de botões */
+.filtro-genero .btn-group {
+    display: inline-flex;
+    gap: 10px;
+}
+
+/* Estilo dos botões */
+.filtro-genero button {
+    border: 2px solid #cc522f;
+    color: #cc522f;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+}
+
+/* Hover e foco */
+.filtro-genero button:hover,
+.filtro-genero button:focus {
+    background-color: #cc522f;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.filtro-genero button.active {
+    background-color: #cc522f;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(204, 82, 47, 0.4);
+}
+
+.vitoria_produto-card {
+    transition: all 0.4s ease;
+}
+.vitoria_produto-card[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.95);
+}
+.vitoria_produto-card[style*="display: block"],
+.vitoria_produto-card[style*="display: flex"] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#resultadoBusca {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+} 
+
+/* voltar para home */
+#btnVoltarHome {
+    position: fixed;
+    top: 110px;
+    left: 24px;
+    background: var(--color-gradiente, #DD8C74);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 1000; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+#btnVoltarHome:hover {
+    background: #cc522f;
 }
 
 /* Laura */
+
+.hero-laura, .hero-suporte-laura, .hero-contato-laura {
+    position: relative;
+    height: 35vh; /* menor altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px; /* menor espaço abaixo */
+    transition: transform 0.4s ease;
+}
+
+/* Texto diretamente sobre a imagem */
+.hero-text-laura {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-text-laura h1 {
+    font-size: 2.5rem;
+    color: #cc522f; /* título em laranja */
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.hero-text-laura p {
+    font-size: 1.2rem;
+    color: #333; /* subtítulo em preto */
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-laura, .hero-suporte-laura, .hero-contato-laura {
+        height: 28vh;
+        margin-bottom: 15px;
+    }
+    .hero-text-laura h1 {
+        font-size: 1.8rem;
+    }
+    .hero-text-laura p {
+        font-size: 1rem;
+    }
+}
+
+
+/* ============================= */
+/*         SEÇÕES COMUNS         */
+/* ============================= */
+section-laura {
+    padding: 80px 40px;
+}
+
+.history-section-laura, 
+.mission-section-laura, 
+.pieces-section-laura, 
+.team-section-laura, 
+.produtos-laura {
+    background: #fff6f4;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.history-container-laura h2, 
+.mission-container-laura h2, 
+.pieces-container-laura h2,
+.team-section-laura h2,
+.produtos-laura h2 {
+    font-size: 2.5rem;
+    color: #cc522f;
+    margin-bottom: 30px;
+}
+
+/* ============================= */
+/*             TEXTO             */
+/* ============================= */
+.history-container-laura p,
+.mission-container-laura p,
+.pieces-container-laura p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* ============================= */
+/*       MENTES CRIADORAS        */
+/* ============================= */
+
+/* Grid dos membros */
+.team-grid-laura {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Card individual */
+.team-card-laura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.team-card-laura:hover {
+    transform: translateY(-5px);
+}
+
+/* Wrapper circular da foto */
+.team-photo-wrapper-laura {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 2px solid #cc522f;
+    background-color: #fff0f0;
+    position: relative;
+}
+
+/* Imagem preenchendo completamente a bolinha */
+.team-photo-laura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Hover suave apenas de zoom */
+.team-card-laura:hover .team-photo-laura {
+    transform: scale(1.05);
+}
+
+/* Nome do membro */
+.team-name-laura {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+/* Cargo ou função do membro */
+.team-role-laura {
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .team-grid-laura {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+/* ============================= */
+/*         FADE-IN REVEAL        */
+/* ============================= */
+.reveal-laura {
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ============================= */
+/*         FALE CONOSCO          */
+/* ============================= */
+.produtos-laura {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff6f4;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+/* Título centralizado */
+.l {
+    color: #cc522f;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px; /* distância do conteúdo */
+    width: 100%;
+    display: block;
+}
+
+/* Cards de contato */
+.produto-card-laura {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+    gap: 10px;
+    justify-items: center;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.grid-produtos-laura {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.produto-card-laura {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover suave (aumenta só um pouco) */
+.produto-card-laura:hover {
+    transform: scale(1.05);
+}
+
+/* Ícones dentro do card */
+.produto-card-laura i {
+    font-size: 30px;
+    color: #cc522f;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.produto-card-laura:hover i {
+    transform: scale(1.1);
+}
+
+/* Texto do card */
+.produto-card-laura p {
+    color: #333;
+    margin: 5px 0;
+}
+
+.produto-card-laura p span {
+    color: #cc522f;
+}
+
+/* Nome e redes */
+.team-name-laura {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+    max-width: 320px; /* maior largura */
+}
+
+.team-role-laura {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Seções de Suporte e FAQ */
+.produtos-suporte-laura,
+.produtos-faq-laura,
+.produtos-form-laura {
+    background: #fff6f4;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.produtos-suporte-laura h2,
+.produtos-faq-laura h2,
+.produtos-form-laura h2 {
+    font-size: 2rem;
+    color: #cc522f;
+    margin-bottom: 35px;
+}
+
+/* Grid de cards de suporte */
+.grid-produtos-suporte-laura {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.produto-card-suporte-laura {
+    background: #fff;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.produto-card-suporte-laura strong {
+    color: #cc522f;
+}
+
+.produto-card-suporte-laura:hover {
+    transform: translateY(-5px);
+}
+
+/* FAQ */
+.faq-laura {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item-laura {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.faq-item-laura:hover {
+    transform: translateY(-3px);
+}
+
+.question-laura {
+    font-weight: 700;
+    color: #cc522f;
+    cursor: pointer;
+}
+
+.answer-laura {
+    margin-top: 8px;
+    color: #333;
+    font-size: 0.95rem;
+    display: none; /* você pode usar JS para mostrar ao clicar na pergunta */
+}
+
+/* Formulário de contato */
+.form-contato-laura {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-contato-laura input,
+.form-contato-laura textarea {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #cc522f;
+    font-size: 0.95rem;
+    outline: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-contato-laura input:focus,
+.form-contato-laura textarea:focus {
+    border-color: #ff8533;
+    box-shadow: 0 0 8px rgba(204,82,47,0.2);
+}
+
+ #btnEnviar-laura{
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #cc522f, #ff8533);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.form-contato-laura button.nav-btn-laura:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e65500, #ff751a);
+}
+
+/* Chat flutuante */
+#chat-widget-laura {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#chat-toggle-laura {
+    background: linear-gradient(135deg, #cc522f, #ff8533);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+#chat-toggle-laura:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: linear-gradient(135deg, #e65500, #ff751a);
+}
+
+.chat-container-widget-laura {
+    width: 380px;
+    height: 450px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 10px;
+    border-top: 4px solid #cc522f;
+}
+
+#chat-box-widget-laura {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+#chat-box-widget-laura img {
+  width: 35px;       /* tamanho compacto */
+  height: 35px;
+  border-radius: 50%; /* deixa redonda */
+  object-fit: cover;  /* ajusta o enquadramento */
+  margin-right: 8px;  /* espaço entre a imagem e o texto */
+  vertical-align: middle;
+}
+
+
+.message-user-laura {
+    background: linear-gradient(135deg, #ff8533, #ff6f3c);
+    color: #fff;
+    align-self: flex-end;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+
+.message-bot-laura {
+    background: #f2f2f2;
+    color: #333;
+    align-self: flex-start;
+    border-radius: 25px;
+    padding: 8px 15px;
+}
+
+#chat-form-widget-laura {
+    display: flex;
+    border-top: 2px solid #cc522f;
+}
+
+#chat-form-widget-laura input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-radius: 0 0 0 15px;
+    background: #f5f5f5;
+}
+
+#chat-form-widget-laura input:focus {
+    background: #fff3e6;
+}
+
+#chat-form-widget-laura button.nav-btn-laura {
+    padding: 0 18px;
+    border-radius: 0 0 15px 0;
+    background: linear-gradient(135deg, #cc522f, #ff8533);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#chat-form-widget-laura button.nav-btn-laura:hover {
+    background: linear-gradient(135deg, #e65500, #ff751a);
+    transform: scale(1.05);
+}
+
+.chat-buttons-laura {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.chat-option-laura {
+    padding: 6px 12px;
+    border: none;
+    background: linear-gradient(135deg, #cc522f, #ff8533);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.chat-option-laura:hover {
+    background: linear-gradient(135deg, #e65500, #ff751a);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* ============================= */
+/*            CARRINHO           */
+/* ============================= */
+/* Container principal */
+.laura-cart-container {
+  width: 100%;
+  max-width: 800px;  /* aumentar pra “mais comprido” */
+  margin: 20px auto; /* centraliza horizontalmente no body */
+  padding: 24px 16px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Lista de itens */
+.laura-cart-items {
+  margin-bottom: 32px;
+}
+
+/* Cada item do carrinho */
+.laura-cart-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: #FAFAFA;
+}
+
+.laura-cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+#carrinho-btn {
+    position: relative; /* necessário para posicionar o span */
+    display: inline-block;
+    text-decoration: none;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red; /* mantém cor */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+}
+
+
+/* Ações do item */
+.laura-item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.laura-cart-items p {
+  top: 50px;
+  right: 20px;
+  background: linear-gradient(135deg, #cc522f, #ff8533);
+  color: rgb(255, 255, 255);
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin: 5px;
+} 
+
+.laura-btn-quant {
+    background: #eee;
+    border: none;
+    padding: 2px 8px;
+    margin-left: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    color: #cc522f;
+}
+.laura-btn-quant:hover {
+    background: #ccc;
+}
+
+
+/* ============================= */
+/*        RESUMO CENTRAL         */
+/* ============================= */
+
+/* Wrapper para centro */
+.laura-cart-summary-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Box do resumo */
+.laura-cart-summary {
+  width: 100%;
+  max-width: 800px; /* mais comprido, ajuste como quiser */
+  padding: 24px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+/* Linhas do resumo */
+.laura-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.laura-total-row span:first-child {
+  font-weight: 500;
+  color: #333333;
+}
+
+.laura-total-row span:last-child {
+  font-weight: 600;
+  color: #EE4D2D;
+  font-size: 18px;
+}
+
+.laura-btn-lixeira {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #cc522f;
+  transition: transform 0.2s, color 0.2s;
+  margin-left: 10px;
+}
+
+.laura-btn-lixeira:hover {
+  transform: scale(1.2);
+  color: #ff8533;
+}
+
+
+/* Botão de checkout dentro do resumo */
+.laura-checkout {
+  margin-top: 16px;
+}
+
+.laura-checkout button {
+  width: 70%;
+  padding: 14px 0;
+  border: none;
+  background: linear-gradient(135deg, #cc522f, #ff8533);
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-left: 90px;
+}
+
+.laura-checkout button:hover {
+  background: #ffd6d6;
+
+}
+
+.laura-empty-message {
+  text-align: center;
+  color: #777777;
+  font-size: 18px;
+  padding: 60px 0;
+}
+
+
+/* ============================= */
+/*         RESPONSIVIDADE        */
+/* ============================= */
+@media (max-width: 768px) {
+  .laura-cart-container {
+    margin: 10px;
+    padding: 16px;
+  }
+  .laura-cart-summary {
+    max-width: 100%;
+    margin: 0 8px;
+    padding: 20px;
+  }
+  .laura-item-actions input[type="number"] {
+    width: 40px;
+  }
+  .hero-text-laura h1 {
+    font-size: 28px;
+  }
+}
+
+/* ============================= */
+/*    Mensagem do carrinho       */
+/* ============================= */
+.mensagem-carrinho-laura {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #ff8533;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  display: none;
+  z-index: 9999;
+  animation: fadeInOut 5s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

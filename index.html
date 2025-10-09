@@ -16,22 +16,38 @@
 <body>
 
     <header>
+
+                <!-- vitoria -->
+        <div id="filtro-panel">
+            <h3>Filtrar por Categorias</h3>
+            <ul>
+                <li><a href="vestidos.html">Vestidos</a></li>
+                <li><a href="calcas.html">Calças</a></li>
+                <li><a href="blusas.html">Blusas</a></li>
+                <li><a href="#">Camisas</a></li>
+                <li><a href="#">Sapatos</a></li>
+                <li><a href="#">Acessórios</a></li>
+            </ul>
+            <button id="fecharFiltro">Fechar</button>
+        </div>
+        <!-- fim vitoria -->
+
         <div class="left-header">
             <nav>
                 <ul class="menu">
                     <li>
                         <a href="#"><span class="material-symbols-outlined menu-icon">menu</span></a>
-                        <ul class="menu-color">
-                            <li><a href="#">Sobre nós</a></li>
-                            <li><a href="#">Contato</a></li>
-                            <li><a href="#">Suporte</a></li>
+                        <ul class="menu-color" id="sobreNosPanel">
+                            <li><a href="sobre.html">Sobre nós</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="suporte.html">Suporte</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="logo">
-                <img src="img/verticelogo.png" alt="Logo" width="100">
+                <a href="index.html"><img src="img/verticelogo.png" alt="Logo" width="100"></a>
             </div>
         </div>
 
@@ -58,20 +74,12 @@
             </button>
         </div>
 
-        <!-- <nav class="center-nav">
-            <ul>
-                <li><a href="#">Mulheres</a></li>
-                <li><a href="#">Homens</a></li>
-                <li><a href="#">Crianças</a></li>
-            </ul>
-        </nav> -->
-
-        <div>
-            <button class="nav-btn">
+        <div><a href="carrinho.html"><button class="nav-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                 </svg>
-            </button>
+            </button></a>
+            
         </div>
 
 
@@ -87,7 +95,7 @@
 
         <span id="areaUsuario" style="display:none;">
             Olá, <strong id="nomeUsuario"></strong>!
-            <button onclick="logout()">Sair</button>
+            <button class="nav-btn" onclick="logout()">Sair</button>
         </span>
 
 
@@ -130,68 +138,79 @@
                 <img src="img/produto-1.png" alt="" width="180px">
                 <p class="texto-multilinha">Camisa elegante de manga longa bufante com gola alta de cor cinza com botões</p>
                 <p>R$79,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
-                <p></p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-2.png" alt="" width="180px">
                 <p class="texto-multilinha">Camisa de manga longa na cor cinza escuro, em poliéster, com botões e sem bolsos</p>
                 <p>R$79,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-3.png" alt="" width="180px">
                 <p class="texto-multilinha">Camisa de manga comprida chiffon branca estampada semi-transparente com gola alta</p>
                 <p>R$75,00</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-4.png" alt="" width="180px">
                 <p class="texto-multilinha">Blusa tricô cropped de manga longa em decote V com estampa simples na cor marrom</p>
                 <p>R$68,00</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-5.png" alt="" width="180px">
                 <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
                 <p>R$99,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-6.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
-                <p>R$99,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <p class="texto-multilinha">Suéter oversized de tricô em decote V</p>
+                <p>R$109,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
     </section>
 
@@ -217,7 +236,7 @@
 
         <!-- Botões de comprar/carrinho -->
         <div class="modal-botoes">
-          <button type="button" class="btn btn-outline-dark">Comprar</button>
+          <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
           <button type="button" class="btn btn-outline-dark">
                     <a href="carrinho.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -253,9 +272,9 @@
         <div class="grid-produtos">
             <div class="produto-card">
                 <img src="img/produto-7.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa elegante de manga longa bufante com gola alta de cor cinza com botões</p>
-                <p>R$79,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <p class="texto-multilinha">Vestido midi retrô de contraste - gola peter pan e manga curta bufante</p>
+                <p>R$139,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html"><a class="compra-btn" href="compra.html">Comprar</a></a></button>
                 <button type="button" class="btn btn-outline-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -265,9 +284,9 @@
             </div>
             <div class="produto-card">
                 <img src="img/produto-8.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa de manga longa na cor cinza escuro, em poliéster, com botões e sem bolsos</p>
-                <p>R$79,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <p class="texto-multilinha">Vestido midi de alfaiataria dupla face - blusa de camisa e corpete decote coração</p>
+                <p>R$199,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
                 <button type="button" class="btn btn-outline-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -276,47 +295,136 @@
             </div>
             <div class="produto-card">
                 <img src="img/produto-9.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa de manga comprida chiffon branca estampada semi-transparente com gola alta</p>
-                <p>R$75,00</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <p class="texto-multilinha">Vestido curto/midi chemise envelope bicolor com amarração</p>
+                <p>R$150,00</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-10.png" alt="" width="180px">
-                <p class="texto-multilinha">Blusa tricô cropped de manga longa em decote V com estampa simples na cor marrom</p>
-                <p>R$68,00</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <p class="texto-multilinha">Vestido curto em tricô leve com manga bufante e faixa de amarração</p>
+                <p>R$120,00</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
             <div class="produto-card">
                 <img src="img/produto-11.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
-                <p>R$99,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
+                <p class="texto-multilinha">Vestido curto evasê com amarração na cintura e manga balonê</p>
+                <p>R$150,00</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-12.png" alt="" width="180px">
+                <p class="texto-multilinha">Vestido midi romântico com decote quadrado, manga longa bufante e amarração</p>
+                <p>R$179,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
                 <button type="button" class="btn btn-outline-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                     </svg>
                 </button>
             </div>
+    </section>
+
+    <section id="produtos" class="produtos">
+        <h2>Produtos da última moda</h2>
+        <div class="grid-produtos destaque">
             <div class="produto-card">
-                <img src="img/produto-12.png" alt="" width="180px">
-                <p class="texto-multilinha">Camisa branca de manga comprida de elastano com colete suéter de tricô rosê em decote V de poliéster</p>
-                <p>R$99,99</p>
-                <button type="button" class="btn btn-outline-dark">Comprar</button>
-                <button type="button" class="btn btn-outline-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                    </svg>
-                </button>
+                <img src="img/produto-13.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça jeans wide leg estonada clara</p>
+                <p>R$139,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-14.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça jeans wide leg super oversized</p>
+                <p>R$169,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-15.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça jeans wide leg preta sólida</p>
+                <p>R$135,00</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-16.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça social wide leg de alfaiataria com pregas frontais</p>
+                <p>R$158,00</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-17.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça cargo streetwear de sarja com bolsos laterais e costura em contraste</p>
+                <p>R$199,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="produto-card">
+                <img src="img/produto-18.png" alt="" width="180px">
+                <p class="texto-multilinha">Calça Track Pant Oversized com Faixa Lateral de Renda e Detalhe Esportivo</p>
+                <p>R$139,99</p>
+                <button type="button" class="btn btn-outline-dark"><a class="compra-btn" href="compra.html">Comprar</a></button>
+                <a href="carrinho.html">
+                    <button type="button" class="btn btn-outline-dark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                        </svg>
+                    </button>
+                </a>
             </div>
     </section>
 
